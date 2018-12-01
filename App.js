@@ -16,8 +16,7 @@ const instructions = Platform.select({
     'This is Android!!! Live reload',
 });
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component {
 
   onButtonPress() {
     codePush.sync({
@@ -30,10 +29,10 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native Updated App!</Text>
+        <Text style={styles.welcome}>Welcome to React Native Updated App123!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
-        <TouchableOpacity onPress={this.onButtonPress}>
+        <TouchableOpacity onPress={()=>this.onButtonPress()}>
           <Text>Check for updates</Text>
         </TouchableOpacity>
       </View>
