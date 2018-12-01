@@ -8,7 +8,8 @@
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text,TouchableOpacity, View } from 'react-native';
-import codePush from "react-native-code-push";
+import CodePush from "react-native-code-push";
+
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu This is IOS!!s',
   android:
@@ -19,9 +20,16 @@ const instructions = Platform.select({
 export default class App extends Component {
 
   onButtonPress() {
-    codePush.sync({
+   // alert('sfas')
+    CodePush.sync({
       updateDialog: true,
-      installMode: codePush.InstallMode.IMMEDIATE
+      installMode: CodePush.InstallMode.IMMEDIATE
+    },(status)=>{
+      for(var key in CodePush.SyncStatus){
+        if(status === CodePush.SyncStatus[key]){
+
+        }
+      }
     });
   }
 
