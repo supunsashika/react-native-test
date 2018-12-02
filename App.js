@@ -25,9 +25,10 @@ export default class App extends Component {
       updateDialog: true,
       installMode: CodePush.InstallMode.IMMEDIATE
     },(status)=>{
+      console.log(status)
       for(var key in CodePush.SyncStatus){
         if(status === CodePush.SyncStatus[key]){
-
+          console.log(CodePush.SyncStatus)
         }
       }
     });
